@@ -18,21 +18,21 @@ public class TestSender implements CommandLineRunner{
 	}
 
 	public void run(String... arg0) throws Exception {
-		System.out.println("TestSender - CommandLineRunner() called - ´ú¸Õ¶}©l");
+		System.out.println("TestSender - CommandLineRunner() called - é–‹å§‹æ¸¬è©¦");
 		if(template == null){
 			System.out.println("template is null");
 		}
 		
-		String data = "foo ¤¤¤å";
+		String data = "foo ä¸­æ–‡";
 		template.convertAndSend(Util.QUEUE_NAME.CHANNEL_TO_BACKEND_QUEUE01, data);
 //    	System.out.println("CHANNEL_TO_BACKEND_QUEUE01 - [o] Sent -  data: " + data);
-		template.convertAndSend(Util.QUEUE_NAME.BACKEND_TO_WEBCHAT_QUEUE, "foo ¤¤¤å");
+		template.convertAndSend(Util.QUEUE_NAME.BACKEND_TO_WEBCHAT_QUEUE, data);
 //		System.out.println("BACKEND_TO_WEBCHAT_QUEUE - [o] Sent -  data: " + data);
-		template.convertAndSend(Util.QUEUE_NAME.BACKEND_TO_LINE_QUEUE, "foo ¤¤¤å");
+		template.convertAndSend(Util.QUEUE_NAME.BACKEND_TO_LINE_QUEUE, data);
 //		System.out.println("BACKEND_TO_LINE_QUEUE - [o] Sent -  data: " + data);
-		template.convertAndSend(Util.QUEUE_NAME.BACKEND_TO_WECHAT_QUEUE, "foo ¤¤¤å");
+		template.convertAndSend(Util.QUEUE_NAME.BACKEND_TO_WECHAT_QUEUE, data);
 //		System.out.println("BACKEND_TO_WECHAT_QUEUE - [o] Sent -  data: " + data);
-		template.convertAndSend(Util.QUEUE_NAME.BACKEND_TO_VOICE_QUEUE, "foo ¤¤¤å");
+		template.convertAndSend(Util.QUEUE_NAME.BACKEND_TO_VOICE_QUEUE, data);
 //		System.out.println("BACKEND_TO_VOICE_QUEUE - [o] Sent -  data: " + data);
 		
 	}
